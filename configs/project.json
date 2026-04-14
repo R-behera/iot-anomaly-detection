@@ -1,0 +1,49 @@
+{
+  "slug": "iot-anomaly-detection",
+  "title": "IoT Anomaly Detection",
+  "project_type": "ml",
+  "domain": "Industrial AI",
+  "summary": "Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.",
+  "tags": [
+    "iot",
+    "anomaly",
+    "ops"
+  ],
+  "accent": "#577590",
+  "dashboard_metrics": [
+    {
+      "label": "Model Lift",
+      "value": "62%",
+      "delta": "+6.4%"
+    },
+    {
+      "label": "Serving P95",
+      "value": "92ms",
+      "delta": "-12ms"
+    },
+    {
+      "label": "Data Freshness",
+      "value": "6h",
+      "delta": "steady"
+    }
+  ],
+  "sample_features": {
+    "engagement_score": 44,
+    "tenure_days": 96,
+    "payment_miss_count": 2,
+    "segment": "consumer",
+    "priority_flag": false
+  },
+  "sample_metrics": {
+    "acquisition": 16.4,
+    "activation": 23.0,
+    "retention": 38.8,
+    "revenue": 53.8
+  },
+  "knowledge_base": [
+    "IoT Anomaly Detection is positioned as a Industrial AI starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on iot, anomaly, ops."
+  ]
+}
