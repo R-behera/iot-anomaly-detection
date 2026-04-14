@@ -9,7 +9,8 @@
     "anomaly",
     "ops"
   ],
-  "accent": "#577590",
+  "accent": "#c82cb6",
+  "secondary_accent": "#2c92a9",
   "dashboard_metrics": [
     {
       "label": "Model Lift",
@@ -45,5 +46,52 @@
     "The primary value proposition is: Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.",
     "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
     "Typical stakeholders include analytics, operations, product, and leadership teams working on iot, anomaly, ops."
+  ],
+  "app_archetype": "watchtower",
+  "ui_profile": {
+    "layout": "rail",
+    "surface": "aurora",
+    "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif",
+    "radius": 27,
+    "shadow": 65,
+    "eyebrow_style": "solid",
+    "module_columns": 2,
+    "hero_align": "left",
+    "headline_mode": "compact"
+  },
+  "app_modules": [
+    {
+      "label": "Signal 01",
+      "title": "Incident Prioritizer",
+      "description": "Simulate how incoming events are scored before they hit an operator queue.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Prioritize",
+      "prefill": "{\n  \"features\": {\n    \"engagement_score\": 44,\n    \"tenure_days\": 96,\n    \"payment_miss_count\": 2,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  }\n}",
+      "hint": "Risk band and top signals will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 02",
+      "title": "Alert Delta Review",
+      "description": "Compare current operating metrics with a baseline to explain what changed.",
+      "endpoint": "/analyze",
+      "input_mode": "json",
+      "cta": "Compare Signals",
+      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 16.4,\n    \"activation\": 23.0,\n    \"retention\": 38.8,\n    \"revenue\": 53.8\n  },\n  \"baseline\": {\n    \"acquisition\": 15.09,\n    \"activation\": 21.16,\n    \"retention\": 35.7,\n    \"revenue\": 49.5\n  }\n}",
+      "hint": "Operational movement summary will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 03",
+      "title": "Triage Playbook",
+      "description": "Generate an action-oriented response plan for the next incident handling step.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Build Playbook",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for IoT Anomaly Detection.\",\n  \"features\": {\n    \"engagement_score\": 44,\n    \"tenure_days\": 96,\n    \"payment_miss_count\": 2,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 16.4,\n    \"activation\": 23.0,\n    \"retention\": 38.8,\n    \"revenue\": 53.8\n  }\n}",
+      "hint": "Suggested next actions and rationale will appear here.",
+      "span": "wide"
+    }
   ]
 }

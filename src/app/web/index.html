@@ -6,13 +6,12 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>IoT Anomaly Detection</title>
           <link rel="stylesheet" href="./styles.css">
-          <style>:root { --accent: #577590; }</style>
         </head>
-        <body>
-          <div class="page">
+        <body class="surface-aurora">
+          <div class="page layout-rail eyebrow-solid headline-compact modules-2 hero-align-left">
             <section class="hero">
               <div class="panel hero-copy">
-                <span class="eyebrow">Predictive Application</span>
+                <span class="eyebrow" data-health>Signal Watchtower</span>
                 <h1 id="project-title">IoT Anomaly Detection</h1>
                 <p id="project-summary" class="lead">Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.</p>
                 <ul id="project-tags" class="tag-list">
@@ -26,55 +25,90 @@
 <article class='card'><span>Data Freshness</span><strong>6h</strong><em>steady</em></article>
                 </div>
                 <div class="mini-grid">
-                  <article class='mini-card'><span>Project Type</span><strong>ML</strong></article><article class='mini-card'><span>Domain</span><strong>Industrial AI</strong></article><article class='mini-card'><span>Interface</span><strong>FastAPI + Browser UI</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                  <article class='mini-card'><span>Project Type</span><strong>ML</strong></article><article class='mini-card'><span>Domain</span><strong>Industrial AI</strong></article><article class='mini-card'><span>Application</span><strong>Signal Watchtower</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
                 </div>
               </div>
             </section>
             <section class="app-grid">
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 01</span>
-                  <h2>Scoring Workbench</h2>
-                  <p>Edit feature inputs and simulate a production prediction pass.</p>
-                </div>
-                <textarea id="score-input"></textarea>
-                <div class="button-row">
-                  <button id="run-score">Run Scoring</button>
-                  <button id="load-defaults" class="secondary" type="button">Reload Defaults</button>
-                </div>
-                <pre id="score-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 02</span>
-                  <h2>KPI Comparison</h2>
-                  <p>Compare current metrics against a baseline and surface the biggest movement.</p>
-                </div>
-                <textarea id="analyze-input"></textarea>
-                <div class="button-row">
-                  <button id="run-analyze">Run Analysis</button>
-                </div>
-                <pre id="analyze-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 03</span>
-                  <h2>Operator Brief</h2>
-                  <p>Ask for a grounded recommendation built from local project context.</p>
-                </div>
-                <textarea id="query-input" class="query-input"></textarea>
-                <div class="button-row">
-                  <button id="run-query">Run Query</button>
-                </div>
-                <pre id="query-output"></pre>
-              </article>
+              <article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Signal 01</span>
+            <h2>Incident Prioritizer</h2>
+            <p>Simulate how incoming events are scored before they hit an operator queue.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;features&quot;: {
+    &quot;engagement_score&quot;: 44,
+    &quot;tenure_days&quot;: 96,
+    &quot;payment_miss_count&quot;: 2,
+    &quot;segment&quot;: &quot;consumer&quot;,
+    &quot;priority_flag&quot;: false
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/score" data-input-mode="json">Prioritize</button>
+          </div>
+          <pre class="js-output">Risk band and top signals will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Signal 02</span>
+            <h2>Alert Delta Review</h2>
+            <p>Compare current operating metrics with a baseline to explain what changed.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 16.4,
+    &quot;activation&quot;: 23.0,
+    &quot;retention&quot;: 38.8,
+    &quot;revenue&quot;: 53.8
+  },
+  &quot;baseline&quot;: {
+    &quot;acquisition&quot;: 15.09,
+    &quot;activation&quot;: 21.16,
+    &quot;retention&quot;: 35.7,
+    &quot;revenue&quot;: 49.5
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Compare Signals</button>
+          </div>
+          <pre class="js-output">Operational movement summary will appear here.</pre>
+        </article>
+<article class="panel module js-module span-wide">
+          <div class="module-header">
+            <span>Signal 03</span>
+            <h2>Triage Playbook</h2>
+            <p>Generate an action-oriented response plan for the next incident handling step.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for IoT Anomaly Detection.&quot;,
+  &quot;features&quot;: {
+    &quot;engagement_score&quot;: 44,
+    &quot;tenure_days&quot;: 96,
+    &quot;payment_miss_count&quot;: 2,
+    &quot;segment&quot;: &quot;consumer&quot;,
+    &quot;priority_flag&quot;: false
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 16.4,
+    &quot;activation&quot;: 23.0,
+    &quot;retention&quot;: 38.8,
+    &quot;revenue&quot;: 53.8
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Build Playbook</button>
+          </div>
+          <pre class="js-output">Suggested next actions and rationale will appear here.</pre>
+        </article>
             </section>
             <footer class="footer">
-              <span>Data Science + AI + LLM + RAG Portfolio</span>
+              <span>Industrial AI • ML • Signal Watchtower</span>
               <span>iot-anomaly-detection</span>
             </footer>
           </div>
-          <script id="bootstrap-data" type="application/json">{"project": {"slug": "iot-anomaly-detection", "title": "IoT Anomaly Detection", "project_type": "ml", "domain": "Industrial AI", "summary": "Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.", "tags": ["iot", "anomaly", "ops"]}, "sample_features": {"engagement_score": 44, "tenure_days": 96, "payment_miss_count": 2, "segment": "consumer", "priority_flag": false}, "sample_metrics": {"acquisition": 16.4, "activation": 23.0, "retention": 38.8, "revenue": 53.8}, "sample_query": "What is the top priority recommendation?", "knowledge_base": ["IoT Anomaly Detection is positioned as a Industrial AI starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on iot, anomaly, ops."], "dashboard_metrics": [{"label": "Model Lift", "value": "62%", "delta": "+6.4%"}, {"label": "Serving P95", "value": "92ms", "delta": "-12ms"}, {"label": "Data Freshness", "value": "6h", "delta": "steady"}]}</script>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "iot-anomaly-detection", "title": "IoT Anomaly Detection", "project_type": "ml", "domain": "Industrial AI", "summary": "Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.", "tags": ["iot", "anomaly", "ops"]}, "app_archetype": "watchtower", "ui_profile": {"layout": "rail", "surface": "aurora", "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif", "radius": 27, "shadow": 65, "eyebrow_style": "solid", "module_columns": 2, "hero_align": "left", "headline_mode": "compact"}, "app_modules": [{"label": "Signal 01", "title": "Incident Prioritizer", "description": "Simulate how incoming events are scored before they hit an operator queue.", "endpoint": "/score", "input_mode": "json", "cta": "Prioritize", "prefill": "{\n  \"features\": {\n    \"engagement_score\": 44,\n    \"tenure_days\": 96,\n    \"payment_miss_count\": 2,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  }\n}", "hint": "Risk band and top signals will appear here.", "span": "normal"}, {"label": "Signal 02", "title": "Alert Delta Review", "description": "Compare current operating metrics with a baseline to explain what changed.", "endpoint": "/analyze", "input_mode": "json", "cta": "Compare Signals", "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 16.4,\n    \"activation\": 23.0,\n    \"retention\": 38.8,\n    \"revenue\": 53.8\n  },\n  \"baseline\": {\n    \"acquisition\": 15.09,\n    \"activation\": 21.16,\n    \"retention\": 35.7,\n    \"revenue\": 49.5\n  }\n}", "hint": "Operational movement summary will appear here.", "span": "normal"}, {"label": "Signal 03", "title": "Triage Playbook", "description": "Generate an action-oriented response plan for the next incident handling step.", "endpoint": "/recommend", "input_mode": "json", "cta": "Build Playbook", "prefill": "{\n  \"prompt\": \"Recommend the next best action for IoT Anomaly Detection.\",\n  \"features\": {\n    \"engagement_score\": 44,\n    \"tenure_days\": 96,\n    \"payment_miss_count\": 2,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 16.4,\n    \"activation\": 23.0,\n    \"retention\": 38.8,\n    \"revenue\": 53.8\n  }\n}", "hint": "Suggested next actions and rationale will appear here.", "span": "wide"}], "sample_features": {"engagement_score": 44, "tenure_days": 96, "payment_miss_count": 2, "segment": "consumer", "priority_flag": false}, "sample_metrics": {"acquisition": 16.4, "activation": 23.0, "retention": 38.8, "revenue": 53.8}, "knowledge_base": ["IoT Anomaly Detection is positioned as a Industrial AI starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Flag anomalous sensor behavior and turn telemetry into actionable alerts for field operations.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on iot, anomaly, ops."], "dashboard_metrics": [{"label": "Model Lift", "value": "62%", "delta": "+6.4%"}, {"label": "Serving P95", "value": "92ms", "delta": "-12ms"}, {"label": "Data Freshness", "value": "6h", "delta": "steady"}]}</script>
           <script src="./app.js"></script>
         </body>
         </html>
